@@ -36,38 +36,32 @@ Simply put, it's a publisher/subscriber system that makes organizing and groupin
 	$.mines.charge(
 	  '/fuse',
 	  function() {
-	    console.group('/fuse');
 	    console.log(arguments);
-	    console.groupEnd();
 	  }
 	);
 
 	$.mines.charge(
 	  '/fuse/a',
 	  function() {
-	    console.group('/fuse/a');
 	    console.log(arguments);
-	    console.groupEnd();
 	  }
 	);
 
 	$.mines.charge(
 	  '/fuse/b',
 	  function() {
-	    console.group('/fuse/b');
+	    
 	    console.log(arguments);
-	    console.groupEnd();
-
+	    
 	  }
 	);
 
 	$.mines.charge(
 	  '/fuse/c',
 	  function(message, bool) {
-	    console.group('/fuse/c');
 	    console.log(message);
 	    console.log(bool);
-	    console.groupEnd();
+	    
 	  }
 	);
 
