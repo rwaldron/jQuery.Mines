@@ -6,12 +6,60 @@
 ## Set Charges
 
 
-<script src="http://gist.github.com/500711.js?file=set-charges.js"></script>
+	$.mines.charge(
+
+	  //  NAME OF THIS CHARGE
+	  '/fuse',
+
+	  //  FUNCTION TO EXECUTE WHEN DETONATED
+	  function() {
+	    console.group('/fuse');
+	    console.log(arguments);
+	    console.groupEnd();
+	  }
+	);
+
 
 ### Examples:
 
 
-<script src="http://gist.github.com/500711.js?file=set-charges-usage.js"></script>
+	$.mines.charge(
+	  '/fuse',
+	  function() {
+	    console.group('/fuse');
+	    console.log(arguments);
+	    console.groupEnd();
+	  }
+	);
+
+	$.mines.charge(
+	  '/fuse/a',
+	  function() {
+	    console.group('/fuse/a');
+	    console.log(arguments);
+	    console.groupEnd();
+	  }
+	);
+
+	$.mines.charge(
+	  '/fuse/b',
+	  function() {
+	    console.group('/fuse/b');
+	    console.log(arguments);
+	    console.groupEnd();
+
+	  }
+	);
+
+	$.mines.charge(
+	  '/fuse/c',
+	  function(message, bool) {
+	    console.group('/fuse/c');
+	    console.log(message);
+	    console.log(bool);
+	    console.groupEnd();
+	  }
+	);
 
 
 
@@ -20,9 +68,35 @@
 
 
 
-<script src="http://gist.github.com/500711.js?file=detonate.js"></script>
+	$.mines.detonate(
+
+	  //  NAME OF CHARGE TO DETONATE
+	  '/fuse',
+
+	  //  ARRAY OF ARGUMENTS
+	  [ (optional arguments) ]
+
+	);
+
 
 ### Examples:
 
-<script src="http://gist.github.com/500711.js?file=detonate-usage.js"></script>
+	$.mines.detonate('/fuse/c', ['message']);
 
+	$.mines.detonate([
+
+	  {
+	    key: '/fuse/a',
+	    args: ['message from fuse a', { foo: 'bar' }]
+	  },
+	  {
+	    key: '/fuse/b',
+	    args: ['message from fuse b', ['an', 'array'] ]
+	  },
+	  {
+	    key: '/fuse/c',
+	    args: ['message from fuse c', true]
+	  }
+	]);
+
+git add . && git commit -m "message" && git push origin master
