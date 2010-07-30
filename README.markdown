@@ -1,10 +1,18 @@
 # jQuery.Mines 
 
 
-Simply put, it's a publisher/subscriber system that makes organizing and grouping logic execution fun and easy. 
+Simply put, it's kind of a publisher/subscriber system that makes organizing and grouping logic execution fun and easy. It's real strength is that it allows you to define many functions, store them with similar "fuse" names and trigger them in groups - with ONE function call.
+
+
 
 
 [jQuery.Mines wiki](http://wiki.github.com/rwldrn/jQuery.Mines/ "jQuery.Mines wiki")
+
+
+
+
+
+
 
 
 
