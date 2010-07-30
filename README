@@ -1,3 +1,26 @@
+# Usage
+
+
+## Set Charges
+
+`
+$.mines.charge(
+  
+  //  NAME OF THIS CHARGE
+  '/fuse',
+  
+  //  FUNCTION TO EXECUTE WHEN DETONATED
+  function() {
+    console.group('/fuse');
+    console.log(arguments);
+    console.groupEnd();
+  }
+);
+`
+
+### Examples:
+
+`
 $.mines.charge(
   '/fuse',
   function() {
@@ -36,8 +59,26 @@ $.mines.charge(
   }
 );
 
-/***********************/
+`
 
+
+## Detonate Charges
+
+
+`
+$.mines.detonate(
+  
+  //  NAME OF CHARGE TO DETONATE
+  '/fuse',
+  
+  //  ARRAY OF ARGUMENTS
+  [ (optional arguments) ]
+  
+);
+`
+
+### Examples:
+`
 $.mines.detonate('/fuse/c', ['message']);
 
 $.mines.detonate([
@@ -55,4 +96,5 @@ $.mines.detonate([
     args: ['message from fuse c', true]
   }
 ]);
-});
+
+`
