@@ -7,14 +7,6 @@
     <script>
     $(function () {
 
-      $.mines.charge(
-        '/fuse',
-        function() {
-          console.group('/fuse');
-          console.log(arguments);
-          console.groupEnd();
-        }
-      );
 
       $.mines.charge(
         '/fuse/a',
@@ -66,6 +58,8 @@
       ]);
       
       
+      
+      $.mines.detonate('/fuse', ['message from fuse b', ['an', 'array'],  { foo: 'bar' }, true]);
       
       $.mines.detonate('/fuse');
       

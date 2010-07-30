@@ -2,23 +2,18 @@
   jQuery.Mines.Charge/Detonate/Disarm()
 */  
 ;(function($){
-  var _payloadCache = {};
+  var _payloadCache = {}, 
+      _payloadkeys  = [];
   
-  function blast(fuses, args) {
-  
-    var fns;
-    
-    $.each(_payloadCache, function(fs, fnArr){
-      if ( _payloadCache[fuses] || fs.indexOf(fuses) > -1 ) {
-        fns  = _payloadCache[fuses] ? _payloadCache[fuses] : fnArr;
-
-        $.each(fns, function (i, fn) {
-          fn.apply($, args || []);
-        });
+  function blast(fuse, args) {
+    for ( var i = 0; i < _payloadkeys.length; i++ ) {
+      if ( _payloadkeys[i].indexOf(fuse) > -1 && _payloadCache[_payloadkeys[i]] ) {
+        $.each(_payloadCache[_payloadkeys[i]], function(){
+          this.apply($, args || []);
+        }); 
       }
-    });  
+    }
   }
-  
   
   $.extend(jQuery, {
     mines: {
@@ -29,13 +24,13 @@
           return;
         }
         $.each(fuse, function (i, _fuse) {
-          $.each(_payloadCache[_fuse.key], function(){
-            this.apply($, _fuse.args || []);
-          });
+          blast(_fuse.key, _fuse.args);
         });
       },
       charge: function(fuse, callback){
-
+        
+        _payloadkeys.push(fuse);
+        
         if(!_payloadCache[fuse]){
           _payloadCache[fuse] = [];
         }
