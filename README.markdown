@@ -1,5 +1,5 @@
 # jQuery.Mines 
---------------
+
 
 Simply put, it's a publisher/subscriber system that makes organizing and grouping logic execution fun and easy. 
 
@@ -9,7 +9,7 @@ Simply put, it's a publisher/subscriber system that makes organizing and groupin
 
 
 # Usage
--------
+
 
 
 
