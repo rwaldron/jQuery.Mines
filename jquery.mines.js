@@ -5,8 +5,18 @@
   var _payloadCache = {};
   
   function blast(fuses, args) {
-    $.each(_payloadCache[fuses], function(){
-      this.apply($, args || []);
+  
+    $.each(_payloadCache, function(fs, fnArr){
+      
+      var fn;
+      
+      if ( _payloadCache[fuses] || fs.indexOf(fuses) > -1 ) {
+        fns  = _payloadCache[fuses] ? _payloadCache[fuses] : fnArr;
+
+        $.each(fns, function (i, fn) {
+          fn.apply($, args || []);
+        });
+      }
     });  
   }
   
