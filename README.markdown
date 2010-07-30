@@ -23,9 +23,9 @@ Simply put, it's a publisher/subscriber system that makes organizing and groupin
 
 	  //  FUNCTION TO EXECUTE WHEN DETONATED
 	  function() {
-	    console.group('/fuse');
+	    
 	    console.log(arguments);
-	    console.groupEnd();
+	    
 	  }
 	);
 
