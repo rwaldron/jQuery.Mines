@@ -4,6 +4,8 @@
 Simply put, it's a publisher/subscriber system that makes organizing and grouping logic execution fun and easy. 
 
 
+[jQuery.Mines wiki](http://wiki.github.com/rwldrn/jQuery.Mines/ "jQuery.Mines wiki")
+
 
 
 # Usage
