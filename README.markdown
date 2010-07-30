@@ -108,5 +108,9 @@ Simply put, it's a publisher/subscriber system that makes organizing and groupin
 	    args: ['message from fuse c', true]
 	  }
 	]);
+	
+	
+	//  Will trigger all mines with "/fuse" in their name
+	$.mines.detonate('/fuse', ['message']);
 
-git add . && git commit -m "message" && git push origin master
+		
