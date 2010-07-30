@@ -36,14 +36,18 @@ Simply put, it's a publisher/subscriber system that makes organizing and groupin
 	$.mines.charge(
 	  '/fuse',
 	  function() {
+	  
 	    console.log(arguments);
+	  
 	  }
 	);
 
 	$.mines.charge(
 	  '/fuse/a',
 	  function() {
+	  
 	    console.log(arguments);
+	  
 	  }
 	);
 
@@ -59,6 +63,7 @@ Simply put, it's a publisher/subscriber system that makes organizing and groupin
 	$.mines.charge(
 	  '/fuse/c',
 	  function(message, bool) {
+	  
 	    console.log(message);
 	    console.log(bool);
 	    
