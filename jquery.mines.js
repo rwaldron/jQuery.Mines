@@ -8,7 +8,7 @@
   
     $.each(_payloadCache, function(fs, fnArr){
       
-      var fn;
+      var fns;
       
       if ( _payloadCache[fuses] || fs.indexOf(fuses) > -1 ) {
         fns  = _payloadCache[fuses] ? _payloadCache[fuses] : fnArr;
