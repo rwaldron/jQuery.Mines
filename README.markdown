@@ -13,7 +13,7 @@ Simply put, it's a publisher/subscriber system that makes organizing and groupin
 
 
 
-## Set Charges
+## Setting Charges
 
 
 	$.mines.charge(
